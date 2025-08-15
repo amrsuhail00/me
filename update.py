@@ -1,26 +1,22 @@
 import requests
 
-# رابط الـ m3u الأصلي
-SOURCE_URL = "http://lydexcloud.fyi:80/get.php?username=Amr0111&password=01115667224&type=m3u&output=ts"
+# رابط ملف m3u الأصلي
+original_url = "http://lydexcloud.fyi:80/get.php?username=Amr0111&password=01115667224&type=m3u&output=ts"
 
-# بيانات القناة الجديدة
-NEW_CHANNEL_NAME = "Bein sport ggg"
-NEW_CHANNEL_URL = "https://filmszone.shop:443/play/Q0XBH20Ej_eF9bqIOgR19dpHnCl96zqSwy8Shq-NDus/ts"
+# القناة الجديدة qqqq
+new_channel_name = "#EXTINF:-1 group-title=\"Sports\" tvg-logo=\"\",qqqq"
+new_channel_link = "http://lydexcloud.fyi:80/Amr0111/01115667224/369917"
 
-# تحميل القائمة الأصلية
-print("Downloading original playlist...")
-response = requests.get(SOURCE_URL)
-response.raise_for_status()
-original_playlist = response.text
+# تحميل الملف الأصلي
+r = requests.get(original_url)
+r.raise_for_status()
+original_content = r.text.strip()
 
-# تكوين القناة الجديدة
-new_channel = f'#EXTINF:-1 tvg-id="" tvg-name="{NEW_CHANNEL_NAME}" tvg-logo="" group-title="Custom",{NEW_CHANNEL_NAME}\n{NEW_CHANNEL_URL}\n'
+# دمج القناة في الأول
+new_content = f"{new_channel_name}\n{new_channel_link}\n{original_content}"
 
-# دمج القناة الجديدة مع القائمة الأصلية
-final_playlist = "#EXTM3U\n" + new_channel + original_playlist.split("\n", 1)[1]
-
-# حفظ الملف الناتج
+# حفظ الملف
 with open("playlist.m3u", "w", encoding="utf-8") as f:
-    f.write(final_playlist)
+    f.write(new_content)
 
-print("Playlist updated successfully!")
+print("تم إنشاء playlist.m3u بنجاح.")
