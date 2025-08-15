@@ -4,7 +4,7 @@ import requests
 SOURCE_URL = "http://lydexcloud.fyi:80/get.php?username=Amr0111&password=01115667224&type=m3u&output=ts"
 
 # بيانات القناة الجديدة
-NEW_CHANNEL_NAME = "Bein sport g"
+NEW_CHANNEL_NAME = "Bein sport ggg"
 NEW_CHANNEL_URL = "https://filmszone.shop:443/play/Q0XBH20Ej_eF9bqIOgR19dpHnCl96zqSwy8Shq-NDus/ts"
 
 # تحميل القائمة الأصلية
