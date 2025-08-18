@@ -1,7 +1,7 @@
 import requests
 
 # رابط الـ m3u الأساسي
-source_url = "http://lydexcloud.fyi:80/get.php?username=Amr0111&password=01115667224&type=m3u&output=ts"
+source_url = "http://lydexcloud.fyi:80/get.php?username=242317633858&password=291517782089&type=m3u_plus&output=ts"
 
 # القناة الإضافية
 extra_channel = '#EXTINF:-1 tvg-id="" tvg-name="qqqq" group-title="Extra",qqqq\nhttp://lydexcloud.fyi:80/Amr0111/01115667224/369917\n'
